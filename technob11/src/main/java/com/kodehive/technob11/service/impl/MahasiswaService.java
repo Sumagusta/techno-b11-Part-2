@@ -14,11 +14,11 @@ import com.kodehive.technob11.service.IMahasiswaService;
 @Service
 public class MahasiswaService implements IMahasiswaService {
 	@Autowired
-	IMahasiswaRepository MahasiswaRepository;
+	IMahasiswaRepository mahasiswaRepository;
 	
 	public int Insert(MahasiswaModel model){
 		model.setCreatedBy(getCurrentUserFromLogin());
-		var result = MahasiswaRepository.insert(model);
+		var result = mahasiswaRepository.insert(model);
 		
 		var emailModel = new EmailModel();
 		var to = new ArrayList<String>();
@@ -32,6 +32,13 @@ public class MahasiswaService implements IMahasiswaService {
 	public String getCurrentUserFromLogin()
 	{
 		return "Bayu";
+	}
+	@Override
+	public List<MahasiswaModel> readAllData() {
+		
+		var result = mahasiswaRepository.readAllData();
+		System.out.println("select success");
+		return result;
 	}
 	
 }

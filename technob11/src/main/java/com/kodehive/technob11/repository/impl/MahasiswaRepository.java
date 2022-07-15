@@ -1,6 +1,9 @@
 package com.kodehive.technob11.repository.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -18,6 +21,14 @@ public class MahasiswaRepository implements IMahasiswaRepository {
 		var query = "insert into t_mahasiswa(name, gender, alamat, spp)" + "values (?,?,?,?)";
 		return jdbc.update(query,
 				new Object[] { model.getName(), model.getGender(), model.getAlamat(), model.getSpp() });
+	}
+
+	@Override
+	public List<MahasiswaModel> readAllData() {
+
+		var query = "select * from t_mahasiswa";
+		var result = jdbc.query(query, new BeanPropertyRowMapper<MahasiswaModel>(MahasiswaModel.class));
+		return result;
 	}
 
 }
