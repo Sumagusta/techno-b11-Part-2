@@ -41,4 +41,20 @@ public class MahasiswaService implements IMahasiswaService {
 		return result;
 	}
 	
+	@Override
+	public List<MahasiswaModel> searchByKeyword(String keyword) {
+		// TODO Auto-generated method stub
+		return mahasiswaRepository.searchByKeyword(keyword);
+	}
+	@Override
+	public List<MahasiswaModel> searchByKeywordParam(String keyword) {
+		// TODO Auto-generated method stub
+		return mahasiswaRepository.searchByKeywordParam(keyword);
+	}
+	@Override
+	public int delete(int id) {
+		// TODO Auto-generated method stub
+		return mahasiswaRepository.deleteById(id);
+	}
+	
 }

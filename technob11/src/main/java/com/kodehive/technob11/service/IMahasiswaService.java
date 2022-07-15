@@ -8,4 +8,10 @@ public interface IMahasiswaService {
 	int Insert(MahasiswaModel model);
 	
 	public List<MahasiswaModel> readAllData();
+	
+	public List<MahasiswaModel> searchByKeyword(String keyword);
+
+	public List<MahasiswaModel> searchByKeywordParam(String keyword);
+	
+	public int delete(int id);
 }

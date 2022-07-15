@@ -26,9 +26,32 @@ public class MahasiswaRepository implements IMahasiswaRepository {
 	@Override
 	public List<MahasiswaModel> readAllData() {
 
-		var query = "select * from t_mahasiswa";
+		var query = "select * from t_mahasiswa order by id desc";
 		var result = jdbc.query(query, new BeanPropertyRowMapper<MahasiswaModel>(MahasiswaModel.class));
 		return result;
+	}
+
+	@Override
+	public List<MahasiswaModel> searchByKeyword(String keyword) {
+
+		var query = "select * from t_mahasiswa where name like '%" + keyword + "%'";
+
+		return jdbc.query(query, new BeanPropertyRowMapper<MahasiswaModel>(MahasiswaModel.class));
+	}
+
+	@Override
+	public List<MahasiswaModel> searchByKeywordParam(String keyword) {
+
+		var query = "select * from t_mahasiswa where name like '%" + keyword + "%'";
+
+		return jdbc.query(query, new BeanPropertyRowMapper<MahasiswaModel>(MahasiswaModel.class));
+	}
+
+	@Override
+	public int deleteById(int id) {
+
+		var query = "delete from t_mahasiswa where id = ?";
+		return jdbc.update(query, id);
 	}
 
 }
