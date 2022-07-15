@@ -42,13 +42,13 @@ public class MahasiswaApiController {
 	}
 	
 	@GetMapping("/getDataByKeyword")
-	public List<MahasiswaModel> getAllDataKeywordWithQueryString(@RequestParam String keyword) {
+	public List<MahasiswaModel> getAllDataKeywordWithQueryString(@RequestParam String keyword){
 		
 		return mahasiswaService.searchByKeywordParam(keyword);
 	}
 	
 	@DeleteMapping("/delete")
-	public String delete(@RequestParam int id) {
-		return "successfully delete "+mahasiswaService.delete(id);
+	public String delete(@RequestParam int id){
+		return "successfully delete, "+mahasiswaService.delete(id);
 	}
 }
