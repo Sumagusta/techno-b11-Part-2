@@ -19,6 +19,11 @@ public class MahasiswaController {
 		return "/home";
 	}
 	
+	@RequestMapping("/learn/html")
+	public String html() {
+		return "/learn_html";
+	}
+	
 
 	@RequestMapping("/insert")
 	public String insertMahasiswa(MahasiswaModel model)
