@@ -29,7 +29,7 @@
 	Alamat
 	<select>
 		<optgroup label="Kota">
-			<option>Magelang</option>
+			<option><a href="/view">Magelang</a></option>
 			<option>Madiun</option>
 			<option>Malang</option>
 		</optgroup>
@@ -72,9 +72,7 @@
 			<td><input type="password" /></td>
 		</tr>
 	</table>
-	<br>
-	
-	statistic table
+	<br> statistic table
 	<table border="1">
 		<thead>
 			<tr>
@@ -85,27 +83,55 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td>1</td>
+				<td rowspan="2">1</td>
 				<td>Hendra</td>
 				<td>22</td>
 			</tr>
 			<tr>
-				<td>2</td>
 				<td>Hendro</td>
 				<td>23</td>
 			</tr>
+
 		</tbody>
 		<tfoot>
 			<tr>
-				<td>Nilai</td>
+				<td colspan="2">Nilai</td>
+				<td>90</td>
 			</tr>
 		</tfoot>
 	</table>
 
+	<ul>
+		<li>Dona</li>
+		<li>Dona</li>
+		<li>Dona</li>
+		<li>Dona</li>
+	</ul>
 
+	<ol>
+		<li>Dona</li>
+		<li>Dona</li>
+		<li>Dona</li>
+		<li>Dona</li>
+	</ol>
 
+	<hr>
 
-
+	<form action="/view" method="post">
+		<table>
+			<tr>
+				<td>Username</td>
+				<td><input type="text" name="user" /></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input type="password" name="pass" /></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="kirim" /></td>
+			</tr>
+		</table>
+	</form>
 
 </body>
 </html>

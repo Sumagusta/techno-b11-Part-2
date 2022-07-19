@@ -33,6 +33,11 @@ public class MahasiswaController {
 		return "/learn_html";
 	}
 	
+	@RequestMapping("/learn/js")
+	public String javascript() {
+		return "/learn_js";
+	}
+	
 
 	@RequestMapping("/insert")
 	public String insertMahasiswa(MahasiswaModel model)
