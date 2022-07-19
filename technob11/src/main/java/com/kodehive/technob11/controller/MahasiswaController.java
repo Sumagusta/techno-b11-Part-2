@@ -1,5 +1,9 @@
 package com.kodehive.technob11.controller;
 
+import java.io.IOException;
+import java.io.InputStream;
+
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +21,11 @@ public class MahasiswaController {
 	@RequestMapping("/view")
 	public String view() {
 		return "/home";
+	}
+	
+	@RequestMapping("/img")
+	public String img1() {
+		return "/static/img/1";
 	}
 	
 	@RequestMapping("/learn/html")
