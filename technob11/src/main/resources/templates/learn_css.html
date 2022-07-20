@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>CSS</title>
+
+<style type="text/css">
+
+/* add another font : https://fonts.google.com/ */
+@import
+	url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap')
+	;
+
+/* h2 {
+	color: #56D760;
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+} */
+* {
+	background-color: #3AA8EE
+}
+
+div p span {
+	color: yellow;
+	background-color: #75BD43;
+}
+
+div p {
+	color: yellow;
+	background-color: #75BD43;
+}
+
+.warna-warni {
+	color: #ffffff;
+	background: rgb(2, 0, 36);
+	background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%,
+		rgba(57, 249, 49, 1) 91%, rgba(38, 232, 255, 1) 100%);
+}
+
+#blue {
+	color: blue;
+	font-family: 'Roboto', sans-serif;
+}
+
+div>h2 {
+	color: #ffffff;
+	background: rgb(2, 0, 36);
+	background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%,
+		rgba(57, 249, 49, 1) 81%, rgba(255, 92, 38, 0.8188317563353467) 99%);
+}
+
+input[type='number'] {
+	color: white;
+}
+
+p, h1, input[type='text'] {
+	color: white;
+	background: rgb(2, 0, 36);
+	background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%,
+		rgba(57, 249, 49, 1) 81%, rgba(255, 92, 38, 0.8188317563353467) 99%);
+}
+</style>
+
+</head>
+<body>
+
+	<h2 style="color: red;">COBA CSS</h2>
+	<h2>COBA CSS1</h2>
+	<h2>COBA CSS2</h2>
+	<h2>COBA CSS3</h2>
+	<h2 id="blue">COBA CSS</h2>
+	<h1 class="warna-warni">COBA CSS6</h1>
+
+	<div>
+
+		<p>
+			Selamat Anda Beruntung <span> Selamat Anda Beruntung </span>
+		</p>
+		<label>Selamat Anda Belum Beruntung</label> <span>
+			<p>HOLAAA</p>
+		</span> <span> </span>
+		<h2>CHILD SELECTORS</h2>
+	</div>
+
+	<hr>
+	<input type="number" placeholder="Masukkan Number">
+	<input type="text" placeholder="Masukkan Text">
+
+
+
+
+</body>
+</html>
