@@ -54,4 +54,10 @@ public class MahasiswaRepository implements IMahasiswaRepository {
 		return jdbc.update(query, id);
 	}
 
+	@Override
+	public List<MahasiswaModel> cari(String name) {
+		var query = "select * from t_mahasiswa m where m.name like '%"+name+"%'";
+		return jdbc.query(query, new BeanPropertyRowMapper<MahasiswaModel>(MahasiswaModel.class));
+	}
+
 }

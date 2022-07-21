@@ -106,25 +106,51 @@
 
 	<button id="remove">Remove Class</button>
 	<div style="padding-top: 35px; padding-bottom: 35px" align="center">
-	
+
 		Air <input id="air" type="text" />
 		<button id="isi">Tuang</button>
-		
+
 		Gelas <input id="gelas" type="text">
 		<div>
 			<h1 id="output">OUTPUT</h1>
 		</div>
 	</div>
+
+
+	<p>This is a paragraph.</p>
+
+	<button>Toggle between slide up and slide down for a p element</button>
+
+	<hr>
+	<br>
+	
+	<div id="search">
+
+		<form id="form-cari" method="get">
+			cari <input type="text" id="cari" name="name"> <input
+				type="submit">
+		</form>
+	</div>
+
 	<script type="text/javascript">
-		
-		
-		$('#isi').on('click', function(){
+		$(document).ready(function() {
+			$('#form-cari').on('submit', function() {
+				$.ajax({
+					url : '/learn/jquery/search',
+					type : 'post',
+					data : $(this).serialize(),
+					dataType : 'json'
+				})
+			});
+		});
+
+		$('#isi').on('click', function() {
 			var air = $('#air').val() // get value
 			$('#gelas').val(air)
-			
+
 			$('#output').html(air)
 		})
-		
+
 		$('#headText').attr('title', 'hehehaha')
 		var data = $('#headText').attr('title')
 		$('#div1').text(data).css('color', '#2A3AFF')
@@ -140,9 +166,5 @@
 			$('table').removeClass('table table-striped table-hover')
 		})
 	</script>
-
-	<p>This is a paragraph.</p>
-
-	<button>Toggle between slide up and slide down for a p element</button>
 </body>
 </html>

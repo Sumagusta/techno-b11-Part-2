@@ -56,5 +56,10 @@ public class MahasiswaService implements IMahasiswaService {
 		// TODO Auto-generated method stub
 		return mahasiswaRepository.deleteById(id);
 	}
+	@Override
+	public List<MahasiswaModel> cari(String name) {
+		// TODO Auto-generated method stub
+		return mahasiswaRepository.cari(name);
+	}
 	
 }

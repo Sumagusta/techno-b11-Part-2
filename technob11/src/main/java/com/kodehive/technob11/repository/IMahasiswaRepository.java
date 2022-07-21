@@ -16,5 +16,7 @@ public interface IMahasiswaRepository {
 	
 	public int deleteById(int id);
 	
+	public List<MahasiswaModel> cari(String name);
+	
 	
 }

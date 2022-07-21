@@ -14,4 +14,6 @@ public interface IMahasiswaService {
 	public List<MahasiswaModel> searchByKeywordParam(String keyword);
 	
 	public int delete(int id);
+	
+	public List<MahasiswaModel> cari(String name);
 }
