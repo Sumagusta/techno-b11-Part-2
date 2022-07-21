@@ -48,6 +48,11 @@ public class MahasiswaController {
 		return "/learn_jquery";
 	}
 	
+	@RequestMapping("/learn/jquery/task")
+	public String jqueryTask() {
+		return "/jquery_task";
+	}
+	
 
 	@RequestMapping("/insert")
 	public String insertMahasiswa(MahasiswaModel model)

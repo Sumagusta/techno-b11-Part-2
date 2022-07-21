@@ -9,10 +9,21 @@
 	rel="stylesheet">
 
 <script>
+	/* 	$(document).on('click', '#bt1', function(){
+	
+	 }) */
+
+	$('#bt1').on('click', function() {
+		$('#bt1').css('color', 'red')
+	})
+
 	$(document).ready(function() {
 		$("button").click(function() {
 			$("p").slideToggle();
 		});
+		$('#hijau').on('click', function() {
+			$('#tbHijau').css('background-color', 'green')
+		})
 	});
 </script>
 </head>
@@ -21,7 +32,16 @@
 	<h1 id="headText" title="Coba Jquery Libs">JQuery Lib</h1>
 	<div id="div1"></div>
 
-	<table>
+	<button id="bt1">Click</button>
+
+	<select>
+
+		<option value="Hijau" id="hijau">Hijau</option>
+		<option>Merah</option>
+
+	</select>
+
+	<table id="tbHijau">
 		<tr>
 			<td>Name</td>
 			<td>Age</td>
@@ -81,10 +101,30 @@
 			<td>20</td>
 		</tr>
 	</table>
+
+	<hr>
 
 	<button id="remove">Remove Class</button>
-
+	<div style="padding-top: 35px; padding-bottom: 35px" align="center">
+	
+		Air <input id="air" type="text" />
+		<button id="isi">Tuang</button>
+		
+		Gelas <input id="gelas" type="text">
+		<div>
+			<h1 id="output">OUTPUT</h1>
+		</div>
+	</div>
 	<script type="text/javascript">
+		
+		
+		$('#isi').on('click', function(){
+			var air = $('#air').val() // get value
+			$('#gelas').val(air)
+			
+			$('#output').html(air)
+		})
+		
 		$('#headText').attr('title', 'hehehaha')
 		var data = $('#headText').attr('title')
 		$('#div1').text(data).css('color', '#2A3AFF')
