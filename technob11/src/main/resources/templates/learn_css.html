@@ -3,64 +3,13 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>CSS</title>
+<!-- <link rel="stylesheet" href="../css/learn.css"> -->
 
-<style type="text/css">
-
-/* add another font : https://fonts.google.com/ */
-@import
-	url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap')
-	;
-
-/* h2 {
-	color: #56D760;
-	font-family: 'Roboto', sans-serif;
-	font-weight: bold;
-} */
-* {
-	background-color: #3AA8EE
-}
-
-div p span {
-	color: yellow;
-	background-color: #75BD43;
-}
-
-div p {
-	color: yellow;
-	background-color: #75BD43;
-}
-
-.warna-warni {
-	color: #ffffff;
-	background: rgb(2, 0, 36);
-	background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%,
-		rgba(57, 249, 49, 1) 91%, rgba(38, 232, 255, 1) 100%);
-}
-
-#blue {
-	color: blue;
-	font-family: 'Roboto', sans-serif;
-}
-
-div>h2 {
-	color: #ffffff;
-	background: rgb(2, 0, 36);
-	background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%,
-		rgba(57, 249, 49, 1) 81%, rgba(255, 92, 38, 0.8188317563353467) 99%);
-}
-
-input[type='number'] {
-	color: white;
-}
-
-p, h1, input[type='text'] {
-	color: white;
-	background: rgb(2, 0, 36);
-	background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%,
-		rgba(57, 249, 49, 1) 81%, rgba(255, 92, 38, 0.8188317563353467) 99%);
-}
-</style>
-
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 
@@ -72,7 +21,6 @@ p, h1, input[type='text'] {
 	<h1 class="warna-warni">COBA CSS6</h1>
 
 	<div>
-
 		<p>
 			Selamat Anda Beruntung <span> Selamat Anda Beruntung </span>
 		</p>
@@ -86,7 +34,67 @@ p, h1, input[type='text'] {
 	<input type="number" placeholder="Masukkan Number">
 	<input type="text" placeholder="Masukkan Text">
 
+	<div class="spinner-border text-primary" role="status">
+		<span class="visually-hidden">Loading...</span>
+	</div>
 
+	<div style="padding-top: 50px" align="center">
+		<table border="1" class="table table-striped table-hover"
+			style="width: 25px">
+			<thead>
+				<tr>
+					<th>No</th>
+					<th>Name</th>
+					<th>Age</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td rowspan="2">1</td>
+					<td>Hendra</td>
+					<td>22</td>
+				</tr>
+				<tr>
+					<td>Hendro</td>
+					<td>23</td>
+				</tr>
+
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="2">Nilai</td>
+					<td>90</td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2" class="active"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <div class="item">
+            <img data-src="holder.js/1140x500/auto/#777:#555/text:First slide" alt="First slide [1140x500]" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTE0MCIgaGVpZ2h0PSI1MDAiIHZpZXdCb3g9IjAgMCAxMTQwIDUwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvMTE0MHg1MDAvYXV0by8jNzc3OiM1NTUvdGV4dDpGaXJzdCBzbGlkZQpDcmVhdGVkIHdpdGggSG9sZGVyLmpzIDIuNi4wLgpMZWFybiBtb3JlIGF0IGh0dHA6Ly9ob2xkZXJqcy5jb20KKGMpIDIwMTItMjAxNSBJdmFuIE1hbG9waW5za3kgLSBodHRwOi8vaW1za3kuY28KLS0+PGRlZnM+PHN0eWxlIHR5cGU9InRleHQvY3NzIj48IVtDREFUQVsjaG9sZGVyXzE4MjFiMDdjNDcxIHRleHQgeyBmaWxsOiM1NTU7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6NTdwdCB9IF1dPjwvc3R5bGU+PC9kZWZzPjxnIGlkPSJob2xkZXJfMTgyMWIwN2M0NzEiPjxyZWN0IHdpZHRoPSIxMTQwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjxnPjx0ZXh0IHg9IjM5MC41IiB5PSIyNzUuNDAwMDAxNTI1ODc4OSI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" data-holder-rendered="true">
+          </div>
+          <div class="item">
+            <img data-src="holder.js/1140x500/auto/#666:#444/text:Second slide" alt="Second slide [1140x500]" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTE0MCIgaGVpZ2h0PSI1MDAiIHZpZXdCb3g9IjAgMCAxMTQwIDUwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvMTE0MHg1MDAvYXV0by8jNjY2OiM0NDQvdGV4dDpTZWNvbmQgc2xpZGUKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xODIxYjA3YTQzMSB0ZXh0IHsgZmlsbDojNDQ0O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjU3cHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE4MjFiMDdhNDMxIj48cmVjdCB3aWR0aD0iMTE0MCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiM2NjYiLz48Zz48dGV4dCB4PSIzMzUuNTkzNzUiIHk9IjI3NS40MDAwMDE1MjU4Nzg5Ij5TZWNvbmQgc2xpZGU8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" data-holder-rendered="true">
+          </div>
+          <div class="item active">
+            <img data-src="holder.js/1140x500/auto/#555:#333/text:Third slide" alt="Third slide [1140x500]" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTE0MCIgaGVpZ2h0PSI1MDAiIHZpZXdCb3g9IjAgMCAxMTQwIDUwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvMTE0MHg1MDAvYXV0by8jNTU1OiMzMzMvdGV4dDpUaGlyZCBzbGlkZQpDcmVhdGVkIHdpdGggSG9sZGVyLmpzIDIuNi4wLgpMZWFybiBtb3JlIGF0IGh0dHA6Ly9ob2xkZXJqcy5jb20KKGMpIDIwMTItMjAxNSBJdmFuIE1hbG9waW5za3kgLSBodHRwOi8vaW1za3kuY28KLS0+PGRlZnM+PHN0eWxlIHR5cGU9InRleHQvY3NzIj48IVtDREFUQVsjaG9sZGVyXzE4MjFiMDdjOWQxIHRleHQgeyBmaWxsOiMzMzM7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6NTdwdCB9IF1dPjwvc3R5bGU+PC9kZWZzPjxnIGlkPSJob2xkZXJfMTgyMWIwN2M5ZDEiPjxyZWN0IHdpZHRoPSIxMTQwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzU1NSIvPjxnPjx0ZXh0IHg9IjM3Ny44NjQ1NzgyNDcwNzAzIiB5PSIyNzUuNDAwMDAxNTI1ODc4OSI+VGhpcmQgc2xpZGU8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" data-holder-rendered="true">
+          </div>
+        </div>
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
 
 
 </body>
