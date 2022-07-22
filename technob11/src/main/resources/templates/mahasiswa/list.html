@@ -1,0 +1,7 @@
+<tr th:each="data : ${mahasiswa}">
+		<td th:text="${data.name}"></td>
+		<td th:text="${data.gender}"></td>
+
+		<td><button class="btn btn-info">Update</button></td>
+		<td><button class="btn btn-danger">Delete</button></td>
+</tr>

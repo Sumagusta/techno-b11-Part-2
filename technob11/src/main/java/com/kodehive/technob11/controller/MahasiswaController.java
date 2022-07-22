@@ -5,10 +5,13 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -59,7 +62,7 @@ public class MahasiswaController {
 	
 	@RequestMapping("/mahasiswa")
 	public String mahasiwa() {
-		return "mahasiswa";
+		return "mahasiswa/home";
 	}
 	
 
@@ -84,7 +87,37 @@ public class MahasiswaController {
 		mahasiswaModelList = mahasiswaService.readAllData();
 		
 		model.addAttribute("mahasiswa", mahasiswaModelList);
-		return "/mahasiswa";
+		return "/mahasiswa/list";
+	}
+	
+	@RequestMapping("/mahasiswa/add")
+	public String mahasiswaAddModal() {
+		return "/mahasiswa/add";
+	}
+	
+	@RequestMapping("/mahasiswa/create1")
+	public String mahasiswaCreate(@RequestBody MahasiswaModel model) {
+		
+		MahasiswaModel mahasiswaModel = new MahasiswaModel();
+		mahasiswaModel.setName(model.getName());
+		mahasiswaModel.setGender(model.getGender());
+		mahasiswaModel.setSpp(model.getSpp());
+		mahasiswaModel.setAlamat(model.getAlamat());
+		
+		mahasiswaService.Insert(mahasiswaModel);
+		return "/mahasiswa/home";
+	}
+	
+	@RequestMapping("/mahasiswa/create")
+	public String mahasiswaCreate(HttpServletRequest request) {
+		
+		MahasiswaModel mahasiswaModel = new MahasiswaModel();
+		mahasiswaModel.setName(request.getParameter("name"));
+		mahasiswaModel.setGender(request.getParameter("jk"));
+		mahasiswaModel.setSpp(Integer.valueOf(request.getParameter("spp")));
+		
+		mahasiswaService.Insert(mahasiswaModel);
+		return "/mahasiswa/home";
 	}
 	
 }
