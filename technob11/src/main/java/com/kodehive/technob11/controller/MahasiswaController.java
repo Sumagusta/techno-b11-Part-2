@@ -2,11 +2,13 @@ package com.kodehive.technob11.controller;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,7 +20,7 @@ import com.kodehive.technob11.service.IMahasiswaService;
 @Controller
 public class MahasiswaController {
 	@Autowired
-	IMahasiswaService MahasiswaService;
+	IMahasiswaService mahasiswaService;
 	
 	@RequestMapping("/view")
 	public String view() {
@@ -55,19 +57,34 @@ public class MahasiswaController {
 		return "/jquery_task";
 	}
 	
+	@RequestMapping("/mahasiswa")
+	public String mahasiwa() {
+		return "mahasiswa";
+	}
+	
 
 	@RequestMapping("/insert")
 	public String insertMahasiswa(MahasiswaModel model)
 	{
-		MahasiswaService.Insert(model);
+		mahasiswaService.Insert(model);
 		return "/insertSuccess";
 	}
 	
 	@RequestMapping("/learn/jquery/search")
 	@ResponseBody
 	public String cariData(@RequestParam String name) {
-		List<MahasiswaModel> data= MahasiswaService.cari(name);
+		List<MahasiswaModel> data= mahasiswaService.cari(name);
 		return "data : " + data;
+	}
+	
+	@RequestMapping("/mahasiswa/list")
+	public String mahasiswaList(Model model) {
+		
+		List<MahasiswaModel> mahasiswaModelList = new ArrayList<MahasiswaModel>();
+		mahasiswaModelList = mahasiswaService.readAllData();
+		
+		model.addAttribute("mahasiswa", mahasiswaModelList);
+		return "/mahasiswa";
 	}
 	
 }
